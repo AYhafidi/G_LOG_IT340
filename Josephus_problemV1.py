@@ -7,7 +7,7 @@ def solution(array, k):
         permuation.append(item)
     return permuation
 
-N = 10
+N = 1_000_000
 k = 3
 array =[i for i in range(1, N+1)]
 

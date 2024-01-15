@@ -1,2 +1,2 @@
-# G-LOG
-Course
+# enseirb
+GLRT - IT340
