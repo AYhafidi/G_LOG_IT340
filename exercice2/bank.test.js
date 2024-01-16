@@ -22,6 +22,8 @@ describe('retrieveBalance', () => {
     })
 
     test("retourner la valeur renvoyer par la fonction retrieveBalance", ()=>{
-        expect(getBalance("AYAMNE")).toEqual(200);
+        const solde = getBalance("AYAMNE");
+        expect(DAO.retrieveBalance).toHaveBeenCalledWith("AYAMNE");
+        expect(solde).toEqual(200);
     })
 })
