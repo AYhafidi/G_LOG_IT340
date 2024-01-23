@@ -1,0 +1,84 @@
+html {
+    height: 100%;
+    width: 100%;
+  }
+  
+  :root {
+    --title-color: green;
+    --font-size-S: 1.5rem;
+    --font-size-M: 2rem;
+    --font-size-L: 3rem;
+    --space-xxs: 0.2rem;
+    --space-xs: 0.8rem;
+    --space-s: 1.2rem;
+    --space-m: 2rem;
+    --space-l: 3.5rem; /* Fixed typo: Added "rem" to the value */
+    --space-xl: 8rem;
+    --main-border-style: solid;
+  }
+  
+  body {
+    display: grid;
+    grid-template-columns: 5rem 1fr; /* Sidebar and main content */
+    grid-template-rows: 5rem 1fr 5rem; /* Header, main content, and footer */
+    height: 100%;
+    width: 100%;
+  }
+  
+  .header {
+    grid-column: span 2; /* Header spans both columns */
+    padding: var(--space-s);
+    border: var(--space-xxs) var(--main-border-style) blue;
+    height: 5rem;
+    font-size: clamp(32px, var(--font-size-M), 80px);
+    color: var(--title-color);
+    animation: font-slide 2s ease infinite;
+  }
+  
+  .section {
+    grid-column: 2; /* Section spans the second column */
+    padding: var(--space-m);
+    border: var(--space-xxs) var(--main-border-style) orange;
+    font-size: var(--font-size-S);
+  }
+  
+  .footer {
+    grid-column: span 2; /* Footer spans both columns */
+    padding: var(--space-s);
+    border: var(--space-xxs) var(--main-border-style) blue;
+    text-align: end;
+    color: var(--title-color);
+    font-size: var(--font-size-M);
+  }
+  
+  .flex {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .side--Bar {
+    grid-row: span 3; /* Sidebar spans all three rows */
+    border: var(--space-xxs) var(--main-border-style) red;
+    width: 5rem;
+  }
+  
+  @keyframes font-slide {
+    from {
+      text-align: start;
+    }
+  
+    50% {
+      text-align: center;
+    }
+  
+    to {
+      text-align: end;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .header {
+      animation: none;
+    }
+  }
+  
